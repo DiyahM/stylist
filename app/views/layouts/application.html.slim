@@ -2,13 +2,14 @@ doctype html
 html
   head
     title Stylist
-    = stylesheet_link_tag "application", :media => "all"
+    = stylesheet_link_tag "application",
+      "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
   body
-      nav
+    - if @layout != "modal"
+      .nav
         .panel-stylist
           .row
             .large-12.columns
@@ -17,5 +18,9 @@ html
               .large-4.columns
                 a.button.button-stylist href=new_question_path Ask a style question
               .large-2.columns
-                a.title-white login
-      =yield
+                - if current_user
+                  .title-white = current_user.name
+                  a.title-white href=signout_path Sign Out
+                - else
+                  a.title-white login
+    =yield

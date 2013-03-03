@@ -13,5 +13,6 @@ group :assets do
 end
 
 gem 'formtastic'
+gem 'omniauth-facebook'
 
 gem 'jquery-rails'

@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
 
   def home
     @questions = Question.unanswered.limit(3)
+    @layout = "home"
   end
 
   def new
