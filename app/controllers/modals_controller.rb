@@ -6,7 +6,7 @@ class ModalsController < ApplicationController
   end
 
   def login
-
+    
   end
 
   def image_picker

@@ -10,8 +10,13 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.create(params[:question])
-    redirect_to root_url
+    if current_user
+      @question = Question.create(params[:question])
+      redirect_to root_url
+    else
+      session[:question] = params
+      redirect_to modals_login_path
+    end
   end
 
   def show
