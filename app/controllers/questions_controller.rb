@@ -1,7 +1,12 @@
 class QuestionsController < ApplicationController
 
+<<<<<<< HEAD
   def open
-    @questions = Question.open.limit(4)
+    @questions = Question.open.limit(15)
+=======
+  def home
+    @questions = Question.unanswered.limit(4)
+>>>>>>> efac0253fc25a3deb31ac38ab64b96e1239ee066
   end
 
   def new
