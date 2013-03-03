@@ -12,4 +12,8 @@ class QuestionsController < ApplicationController
     @question = Question.create(params[:question])
     redirect_to root_url
   end
+
+  def show
+    @question = Question.find(params[:id])
+  end
 end

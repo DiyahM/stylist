@@ -2,10 +2,12 @@
   .row
     .large-2.columns.small-3
       .thumb-stylist
-        img src=question.image_url
+        = image_tag question.image_url
     .large-10.columns
       p
         strong
           = question.title
         br
         = question.description
+      p
+        a.button.tiny href=question_path(question.id) Show
