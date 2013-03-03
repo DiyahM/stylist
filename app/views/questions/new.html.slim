@@ -1,4 +1,7 @@
 = semantic_form_for @question do |f|
-  = f.inputs :title, :image_url, :description, :answered
+  = f.inputs do
+    = f.input :title, :input_html => { maxlength:50 }
+    = f.input :image_url
+    = f.input :description, :input_html => { maxlength:140 }
   = f.actions :submit
  
