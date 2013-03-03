@@ -7,3 +7,26 @@ p, h2, h4 {
   font-weight: normal;
   line-height: 1.25em;
 }
+
+.up-arrow {
+  width: 20px;
+  height: 14px;
+  padding: 10px 3px;
+  background-image: url(up-arrow.png);
+  background-repeat: no-repeat;
+}
+
+.down-arrow {
+  width: 20px;
+  height: 14px;
+  padding: 10px 3px;
+  background-image: url(down-arrow.png);
+  background-repeat: no-repeat;
+}
+
+.points {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+  line-height: 1.75em;
+  padding: 0 0 5px 10px;
+}
