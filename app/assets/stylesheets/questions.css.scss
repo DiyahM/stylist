@@ -6,8 +6,15 @@ font-family: 'Source Sans Pro', sans-serif;
 }
 
 .thumb-stylist{
-  max-height: 80px;
+  max-height: 120px;
   overflow: hidden;
+}
+
+.row-stylist {
+  padding: 10px 0 0 0;
+  border: 1px solid #CCC;
+  margin-bottom: 10px;
+  background-color: #FFF;
 }
 
 .top-bar-stylist {
@@ -17,6 +24,7 @@ font-family: 'Source Sans Pro', sans-serif;
 
 .panel-stylist {
   background-color: #020714;
+  opacity: .9;
   text-align: center;
   padding-bottom: 25px;
 }
@@ -37,5 +45,16 @@ font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
   color: #FFFFFF;
   padding: 10px;
+  margin: 0;
 }
 
+.button-stylist-small {
+  float: right;
+  background-color: #27AAE1;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #FFFFFF;
+  padding: 10px;
+  margin: 0 0 15px 0;
+}
