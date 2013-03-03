@@ -4,5 +4,19 @@
   .large-6.columns
     h2
       = @question.title
-      p
-        = @question.description
+    p
+      = @question.description
+    - @question.answers.each do |answer|
+      div.answer-box
+        .large-8.columns
+          = answer.reply
+        .large-3.columns
+          h2
+            = answer.points
+    p
+      div.answer-new
+        = semantic_form_for [@question, @answer] do |f|
+          = f.input :reply, :input_html => { maxlength: 140 }
+          = f.actions :submit
+
+
