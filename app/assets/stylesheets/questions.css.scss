@@ -6,12 +6,27 @@ body {
 }
 
 p {
-font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 15px -15px;
+  color: #666
 }
 
 .thumb-stylist{
   max-height: 200px;
   overflow: hidden;
+}
+
+.row-content {
+  padding: 10px 20px;
+}
+
+.container-stylist {
+  padding-top: 140px;
 }
 
 .row-stylist {
@@ -20,17 +35,16 @@ font-family: 'Source Sans Pro', sans-serif;
   background-color: #FFF;
 }
 
-.top-bar-stylist {
-  display: block;
-  padding-bottom: 20px;
-}
-
 .panel-stylist {
+  display: block;
+  padding-bottom: 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
   background-color: #020714;
   background-image: url(image-strip.jpg);
   background-repeat: no-repeat;
   text-align: center;
-  padding-bottom: 25px;
 }
 
 .stylist {
@@ -38,27 +52,27 @@ font-family: 'Source Sans Pro', sans-serif;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   font-size: 48px;
-  margin: 0;
+  margin: 0 0 0 -30px;
   line-height: 2em;
-  }
+  float: left;
+}
 
 .button-stylist {
-  background-color: #27AAE1;
+  background-color: #0099ff;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 22px;
   color: #FFFFFF;
-  padding: 10px;
-  margin: 0;
+  float:right;
+  margin: 25px 0 0 0;
 }
 
 .button-stylist-small {
   float: right;
-  background-color: #27AAE1;
+  background-color: #0099ff;
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: #FFFFFF;
-  padding: 10px;
-  margin: 0 0 15px 0;
+  font-weight: 600;
+  font-size: 15px;
+  color: #EEEEEE;
+  margin: 30px 0 15px 0;
 }
