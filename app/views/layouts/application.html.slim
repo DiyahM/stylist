@@ -19,7 +19,7 @@ html
                 a.button.button-stylist href=new_question_path Ask a style question
               .large-2.columns
                 - if current_user
-                  .logged-in = current_user.name
+                  .logged-in = display_name(current_user.name)
                   a.logged-in href=signout_path Sign Out
                 - else
                   a.login-link href=modals_login_path login
