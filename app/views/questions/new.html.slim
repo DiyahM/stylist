@@ -1,7 +1,10 @@
-= semantic_form_for @question do |f|
-  = f.inputs do
-    = f.input :title, :input_html => { maxlength:50 }
-    = f.input :image_url
-    = f.input :description, :input_html => { maxlength:140 }
-  = f.actions :submit
+.row
+  .large-12.large-offset-1.columns
+    = semantic_form_for @question do |f|
+      = f.inputs do
+        = f.input :title, :input_html => { maxlength:50 }
+        = f.input :image_url
+        = f.input :description, :input_html => { maxlength:140 }
+        = f.input :answered
+      = f.actions :submit
  

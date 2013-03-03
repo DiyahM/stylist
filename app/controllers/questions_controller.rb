@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def open
-    @questions = Question.open.limit(4)
+    @questions = Question.open.limit(15)
   end
 
   def new

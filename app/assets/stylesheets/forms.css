@@ -1,0 +1,25 @@
+fieldset.inputs {
+	margin-top: 20px;
+}
+
+.formtastic .input .label {
+	float: left;
+	text-align: left;
+	background: none;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	color: #333;
+	width: 110px;
+}
+
+.formtastic .boolean label {
+	padding: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	color: #333;
+	margin-left: 110px;
+}
+
+.formtastic .action {
+	margin-left: 110px;
+}
