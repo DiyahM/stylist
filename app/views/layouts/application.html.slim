@@ -22,5 +22,5 @@ html
                   .title-white = current_user.name
                   a.title-white href=signout_path Sign Out
                 - else
-                  a.title-white login
+                  a.title-white href=modals_login_path login
     =yield
