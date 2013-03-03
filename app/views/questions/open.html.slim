@@ -1,11 +1,8 @@
-.row
-  .small-4.small-centered.columns
-    a.button href=modals_bookmarklet_path Ask a fashion question
-
 - @questions.each do |question|
   .row
     .large-2.columns.small-3
-      img src=question.image_url
+      .thumb-stylist
+        img src=question.image_url
     .large-10.columns
       p
         strong

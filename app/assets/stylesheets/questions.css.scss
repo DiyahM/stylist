@@ -1,3 +1,41 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+p {
+font-family: 'Source Sans Pro', sans-serif;
+}
+
+.thumb-stylist{
+  max-height: 80px;
+  overflow: hidden;
+}
+
+.top-bar-stylist {
+  display: block;
+  padding-bottom: 20px;
+}
+
+.panel-stylist {
+  background-color: #020714;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.stylist {
+  color: #FFFFFF;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 48px;
+  margin: 0;
+  line-height: 2em;
+  }
+  
+.button-stylist {
+  background-color: #27AAE1;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #FFFFFF;
+  padding: 10px;
+}
+
