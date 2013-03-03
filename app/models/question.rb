@@ -1,8 +1,8 @@
 class Question < ActiveRecord::Base
   attr_accessible :description, :image_url, :answered, :title
-  has_many :answers, :dependent => :destroy
-  after_save :default_values
-  scope :open, where(answered: false).order("created_at DESC")
+  has_many :answers, :order => "points DESC", :dependent => :destroy
+  before_create :default_values
+  scope :unanswered, where(answered: false).order("created_at DESC")
 
   private
 

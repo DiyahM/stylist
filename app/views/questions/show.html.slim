@@ -2,19 +2,30 @@
   .large-6.columns
     = image_tag @question.image_url
   .large-6.columns
-    h2
-      = @question.title
-    p
-      = @question.description
+    .row
+      h2
+        = @question.title
+    .row 
+      h4
+        = @question.description
     - @question.answers.each do |answer|
-      div.answer-box
-        .large-8.columns
-          = answer.reply
-        .large-3.columns
-          h2
-            = answer.points
-    p
-      div.answer-new
+      .row
+        div.replies
+          .large-8.columns
+            = answer.reply
+          .large-3.columns
+            .row
+              a href='/answers/vote?up=true&answer_id=#{answer.id}'
+                i.foundicon.up-arrow +
+            .row
+              = answer.points
+            .row
+              a href='/answers/vote?up=false&answer_id=#{answer.id}'
+                i.foundicon.down-arrow
+                  |   -
+
+    .row
+      div.replies
         = semantic_form_for [@question, @answer] do |f|
           = f.input :reply, :input_html => { maxlength: 140 }
           = f.actions :submit

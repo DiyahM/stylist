@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  reply: MyText
+  points: 1
+
+two:
+  reply: MyText
+  points: 1

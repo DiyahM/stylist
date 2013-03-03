@@ -9,6 +9,15 @@ p {
 font-family: 'Source Sans Pro', sans-serif;
 }
 
+.formtastic li { display: block; }
+
+.replies{
+  border: 1px solid #CCC;
+  overflow: auto;
+  padding:15px;
+  margin-top:6px;
+  
+}
 .thumb-stylist{
   max-height: 200px;
   overflow: hidden;

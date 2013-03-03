@@ -12,5 +12,6 @@
  *= require foundation_and_overrides
  *= require formtastic
  *= require forms
+ *= require general_foundicons
  *= require_tree .
  */
