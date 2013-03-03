@@ -19,8 +19,15 @@ html
                 a.button.button-stylist href=new_question_path Ask a style question
               .large-2.columns
                 - if current_user
-                  .logged-in = display_name(current_user.name)
-                  a.logged-in href=signout_path Sign Out
+                  ul
+                    li.has-dropdown
+                      .logged-in = display_name(current_user.name)
+                      ul.dropdown
+                        li My Profile
+                        li My Questions
+                        li My Answers
+                        li
+                          a href=signout_path Sign Out
                 - else
                   a.login-link href=modals_login_path login
     =yield
