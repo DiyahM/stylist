@@ -17,13 +17,12 @@ html
                 a.h1.stylist href=root_url stylist.io
               .large-4.columns
                 a.button.button-stylist href=new_question_path Ask a style question
-              .large-1.columns
+              .large-2.columns
                 - if current_user
-                  .login-link = current_user.name
-                  a.login-link href=signout_path Sign Out
+                  .logged-in = current_user.name
+                  a.logged-in href=signout_path Sign Out
                 - else
                   a.login-link href=modals_login_path login
-                  a.login-link login
     =yield
       
     footer.footer-stylist
