@@ -17,10 +17,67 @@ html
                 a.h1.stylist href=root_url stylist.io
               .large-4.columns
                 a.button.button-stylist href=new_question_path Ask a style question
-              .large-2.columns
+              .large-1.columns
                 - if current_user
-                  .title-white = current_user.name
-                  a.title-white href=signout_path Sign Out
+                  .login-link = current_user.name
+                  a.login-link href=signout_path Sign Out
                 - else
-                  a.title-white href=modals_login_path login
+                  a.login-link href=modals_login_path login
+                  a.login-link login
     =yield
+      
+    footer.footer-stylist
+      .row
+        .large-12.columns
+        .large-3.columns
+          .title-white Women
+          a Accessories
+          a Boots
+          a Business wear
+          a Casual
+          a Cosmetics
+          a Evening dresses
+          a Jackets
+          a Jewelry
+          a Lingerie
+          a Shoes
+          a Sportswear
+          a Yoga
+          a > Under $100
+          a > Under $50
+        .large-3.columns
+          .title-white Men
+          a Accessories
+          a Camping
+          a Business wear
+          a Casual Wear
+          a Hats
+          a Jackets
+          a Shoes & Boots
+          a Sportswear
+          a Suits
+          a > Under $100
+          a > Under $50
+        .large-3.columns
+          .title-white Kids
+          a Books
+          a Games
+          a Infants (0-6 months)
+          a Infants (6-12 months)
+          a Toddlers 2-4 years
+          a Tweens
+          a Teenagers
+          a Toys
+          a > Under $100
+          a > Under $50
+        .large-3.columns
+          .title-white Everything Else
+          a Automotive
+          a Books
+          a Food
+          a Furniture
+          a Home Decor
+          a Technology
+          a Travel
+          a > Under $100
+          a > Under $50

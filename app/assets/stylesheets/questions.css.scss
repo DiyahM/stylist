@@ -16,10 +16,12 @@ p,h2,h4 {
   color: #666;
 }
 
-.title-white {
+.login-link {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #FFF;
+  line-height: 6.5em;
+  cursor: pointer;
 }
 
 .formtastic li { display: block; }
@@ -56,7 +58,6 @@ p,h2,h4 {
 
 .panel-stylist {
   display: block;
-  padding-bottom: 10px;
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -68,6 +69,16 @@ p,h2,h4 {
 
 .stylist {
   color: #FFFFFF;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 48px;
+  margin: 0 0 0 -30px;
+  line-height: 2em;
+  float: left;
+}
+
+.stylist-grey {
+  color: #666666;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   font-size: 48px;
@@ -96,25 +107,20 @@ p,h2,h4 {
   margin: 30px 0 15px 0;
 }
 
-.up-arrow {
-  width: 20px;
-  height: 14px;
-  padding: 10px 3px;
-  background-image: url(up-arrow.png);
-  background-repeat: no-repeat;
-}
-
-.down-arrow {
-  width: 20px;
-  height: 14px;
-  padding: 10px 3px;
-  background-image: url(down-arrow.png);
-  background-repeat: no-repeat;
-}
-
-.points {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 24px;
-  line-height: 1.75em;
-  padding: 0 0 5px 10px;
+.footer-stylist {
+  background-color: #000;
+  margin-top: 50px;
+  padding: 20px 0 0 0;
+  color: #FFF;
+  line-height: 2em;
+    .title-white {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      }
+      a{
+      cursor: pointer;
+      display: block;
+      color: #EEEEEE;
+        &:hover{color:#0099ff; }
+      }
 }
