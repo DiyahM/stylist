@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def home
-    @questions = Question.unanswered.limit(15)
+    @questions = Question.unanswered.limit(3)
   end
 
   def new

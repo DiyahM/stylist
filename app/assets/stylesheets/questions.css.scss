@@ -5,7 +5,7 @@ body {
   background-image: url(grey-tile.jpg);
 }
 
-p {
+p,h2,h4 {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -13,7 +13,13 @@ p {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 0 0 15px -15px;
-  color: #666
+  color: #666;
+}
+
+.title-white {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #FFF;
 }
 
 .formtastic li { display: block; }
@@ -23,8 +29,12 @@ p {
   overflow: auto;
   padding:15px;
   margin-top:6px;
-  
+  background-color: #FFF;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  line-height: 1.25em;
 }
+
 .thumb-stylist{
   max-height: 200px;
   overflow: hidden;
@@ -84,4 +94,27 @@ p {
   font-size: 15px;
   color: #EEEEEE;
   margin: 30px 0 15px 0;
+}
+
+.up-arrow {
+  width: 20px;
+  height: 14px;
+  padding: 10px 3px;
+  background-image: url(up-arrow.png);
+  background-repeat: no-repeat;
+}
+
+.down-arrow {
+  width: 20px;
+  height: 14px;
+  padding: 10px 3px;
+  background-image: url(down-arrow.png);
+  background-repeat: no-repeat;
+}
+
+.points {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+  line-height: 1.75em;
+  padding: 0 0 5px 10px;
 }
