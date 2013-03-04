@@ -19,6 +19,13 @@
             br
             = question.description
           p
+            | Posted by
+            = display_name(question.user.name)
+            = time_ago_in_words(question.created_at)
+            |  ago
+            = question.answers.count
+            |  replies
+          p
             a.button.button-stylist-small href=question_path(question.id) Show
 .row
   .large-12.large-offset-10.columns        

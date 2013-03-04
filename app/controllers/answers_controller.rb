@@ -3,8 +3,9 @@ class AnswersController < ApplicationController
   def create
     if current_user
       question = Question.find(params["question_id"])
-      question.answers.build(params["answer"])
-      question.save
+      answer = question.answers.build(params["answer"])
+      answer.user_id = current_user.id
+      answer.save
       redirect_to question_path(question.id)
     else
       session[:answer] = params

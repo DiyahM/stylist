@@ -1,6 +1,7 @@
 class Answer < ActiveRecord::Base
   attr_accessible :points, :reply
   belongs_to :questions
+  belongs_to :user
   before_create :default_values
 
   def vote_up
