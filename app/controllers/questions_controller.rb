@@ -5,6 +5,10 @@ class QuestionsController < ApplicationController
     @layout = "home"
   end
 
+  def index
+    @questions = Question.unanswered
+  end
+
   def new
     @question = Question.new
   end
@@ -15,7 +19,8 @@ class QuestionsController < ApplicationController
       redirect_to root_url
     else
       session[:question] = params
-      redirect_to modals_login_path
+      flash[:notice] = "login"
+      redirect_to root_url
     end
   end
 

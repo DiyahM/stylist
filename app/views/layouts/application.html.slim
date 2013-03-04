@@ -23,9 +23,13 @@ html
                   br
                   a.logged-in href=signout_path Sign Out
                 - else
-                  a.login-link href=modals_login_path login
+                  a.login-link data-reveal-id="login-modal" href="#" login
     =yield
-      
+    #login-modal.reveal-modal.small
+      h2 Login to post
+      p
+        a.button.large href="/auth/facebook" log in with facebook
+      a.close-reveal-modal &#215;      
     footer.footer-stylist
       .row
         .large-12.columns
@@ -87,3 +91,9 @@ html
         a href='https://twitter.com/emstar' @hadiyahdotme 
         | & 
         a href='https://twitter.com/emstar' @emstar
+  javascript:
+    var login = $(function () { $('a.reveal-link').trigger('click'); })
+
+  - if flash[:notice] == "login"
+    - javascript_tag "login"
+    
