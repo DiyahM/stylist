@@ -17,16 +17,22 @@ p,h2,h4 {
 }
 
 .login-link {
+  font-family: 'Source Sans Pro', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #FFF;
   cursor: pointer;
-  line-height: 1.25em;
   float:right;
+  margin-right: 25px;
+}
+
+.logged-in {
+  float: right;
+  margin-right: 20px;
 }
 
 .columns-login {
-  margin-top: 30px;
+  margin-top: 35px;
 }
 
 .formtastic li { display: block; }
@@ -82,18 +88,16 @@ p,h2,h4 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   font-size: 40px;
-  line-height: 1.75em;
   text-align: center;
 }
 
 .button-stylist {
   background-color: #0099ff;
   font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   font-weight: 400;
-  font-size: 18px;
   color: #FFFFFF;
-  float: right;
-  margin: 17px -25px 0 0;
   width: 300px;
 }
 
@@ -123,4 +127,8 @@ p,h2,h4 {
       color: #EEEEEE;
         &:hover{color:#0099ff; }
       }
+}
+
+.d-grey {
+background-color: #333333;
 }

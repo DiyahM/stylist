@@ -15,14 +15,13 @@ html
             .large-12.columns
               .large-4.columns
                 a.h1.stylist href=root_url stylist.io
-              .large-6.columns
-                a.button.button-stylist href=new_question_path Ask a style question
-              .large-2.columns-login
+              .large-3.columns-login
                 - if current_user
-                  a.logged-in href="#" = display_name(current_user.name)
                   a.login-link href=signout_path Sign Out
+                  a.logged-in href="#" = display_name(current_user.name)
                 - else
                   a.login-link data-reveal-id="login-modal" href="#" login
+                  a.login-link href=modals_login_path signup
     =yield
     #login-modal.reveal-modal.small
       h2 Login to post
@@ -84,15 +83,10 @@ html
           a Travel
           a > Under $100
           a > Under $50
-    .row.title
-      .large-12.columns
-        | Made by 
-        a href='https://twitter.com/emstar' @hadiyahdotme 
-        | & 
-        a href='https://twitter.com/emstar' @emstar
-  javascript:
-    var login = $(function () { $('a.reveal-link').trigger('click'); })
-
-  - if flash[:notice] == "login"
-    - javascript_tag "login"
-    
+footer.d-grey.title
+  .row
+    .large-12.columns
+      | Made by 
+      a href='https://twitter.com/hadiyahdotme' @hadiyahdotme 
+      | & 
+      a href='https://twitter.com/emstar' @emstar
