@@ -13,12 +13,15 @@
           h4
             = @question.description
         .row
-          | Posted by
-          = display_name(@question.user.name)
-          = time_ago_in_words(@question.created_at)
-          |  ago
-          = @question.answers.count
-          |  replies
+          .user-name
+            | Posted by
+            = display_name(@question.user.name)
+          .user-time
+            = time_ago_in_words(@question.created_at)
+            |  ago
+          .user-replies
+            = @question.answers.count
+            |  replies
         - @question.answers.each do |answer|
           .row
             div.replies

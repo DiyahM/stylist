@@ -54,7 +54,20 @@ p,h2,h4 {
 }
 
 .row-content {
-  padding: 10px 20px;
+  padding: 10px 20px 0  20px;
+  height: 110px;
+}
+
+.row-bottom {
+  padding: 30px 20px 0 20px;
+}
+
+.user-name,.user-time,.user-replies {
+font-family: 'Source Sans Pro', sans-serif;
+font-size: 15px;
+color: #999;
+margin-right: 30px;
+float:left;
 }
 
 .container-stylist {
@@ -110,7 +123,7 @@ p,h2,h4 {
   font-weight: 600;
   font-size: 15px;
   color: #EEEEEE;
-  margin: 30px 0 15px 0;
+  margin: 0 0 15px 0;
 }
 
 .footer-stylist {

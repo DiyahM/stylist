@@ -8,6 +8,11 @@
 	color: #FFFFFF;
 	width: 300px;
 	padding: 10px;
+	margin-left: 100px;
+}
+
+.formtastic .input {
+	margin-top: 0;
 }
 
 .formtastic .input .label {
@@ -20,20 +25,21 @@
 	width: 110px;
 }
 
-.formtastic .boolean label {
-	padding: 0;
+
+.formtastic .stringish input {
+	width: 85%;
+}
+
+.formtastic .text textarea {
+	width: 85%;
+}
+
+.formtastic button {
+	background-color: #0099ff;
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 18px;
-	color: #333;
-	margin-left: 110px;
-}
-
-.formtastic .action {
-	margin-left: 110px;
-}
-
-.camera {
-	width: 26px;
-	height: 22px;
-	background-image: url(camera-icon.png);
+	font-weight: 600;
+	color: #FFFFFF;
+	font-size: 16px;
+	padding: 4px;
+	margin-top: 8px;
 }
