@@ -10,18 +10,17 @@ html
   body
     - if @layout != "modal"
       .nav
-        .panel-stylist
+        .panel-stylist.fixed
           .row
             .large-12.columns
-              .large-6.columns
-                a.h1.stylist href=root_url stylist.io
               .large-4.columns
+                a.h1.stylist href=root_url stylist.io
+              .large-6.columns
                 a.button.button-stylist href=new_question_path Ask a style question
-              .large-2.columns
+              .large-2.columns-login
                 - if current_user
                   a.logged-in href="#" = display_name(current_user.name)
-                  br
-                  a.logged-in href=signout_path Sign Out
+                  a.login-link href=signout_path Sign Out
                 - else
                   a.login-link href=modals_login_path login
     =yield

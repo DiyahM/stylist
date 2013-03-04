@@ -20,14 +20,13 @@ p,h2,h4 {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #FFF;
-  line-height: 6.5em;
   cursor: pointer;
+  line-height: 1.25em;
+  float:right;
 }
 
-.logged-in {
-  margin-top: 25px;
-  line-height: 1.25em;
-  color: #FFF;
+.columns-login {
+  margin-top: 30px;
 }
 
 .formtastic li { display: block; }
@@ -63,14 +62,9 @@ p,h2,h4 {
 }
 
 .panel-stylist {
-  display: block;
-  position: fixed;
-  width: 100%;
-  z-index: 1;
   background-color: #020714;
   background-image: url(image-strip.jpg);
   background-repeat: no-repeat;
-  text-align: center;
 }
 
 .stylist {
@@ -98,8 +92,9 @@ p,h2,h4 {
   font-weight: 400;
   font-size: 18px;
   color: #FFFFFF;
-  float:right;
-  margin: 15px 0 0 0;
+  float: right;
+  margin: 17px -25px 0 0;
+  width: 300px;
 }
 
 .button-stylist-small {
@@ -115,7 +110,7 @@ p,h2,h4 {
 .footer-stylist {
   background-color: #000;
   margin-top: 50px;
-  padding: 20px 0 0 0;
+  padding: 20px 0;
   color: #FFF;
   line-height: 2em;
     .title-white {
