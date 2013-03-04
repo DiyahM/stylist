@@ -1,3 +1,15 @@
+.actions input {
+	text-rendering: optimizelegibility;
+	background-color: #0099ff;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 600;
+	color: #FFFFFF;
+	width: 300px;
+	padding: 10px;
+}
+
 .formtastic .input .label {
 	float: left;
 	text-align: left;
@@ -20,3 +32,8 @@
 	margin-left: 110px;
 }
 
+.camera {
+	width: 26px;
+	height: 22px;
+	background-image: url(camera-icon.png);
+}

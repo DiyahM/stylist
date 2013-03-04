@@ -65,6 +65,7 @@ p,h2,h4 {
   border: 1px solid #CCC;
   margin-bottom: 10px;
   background-color: #FFF;
+  box-shadow: 0 1px 6px #ccc;
 }
 
 .panel-stylist {
@@ -97,7 +98,7 @@ p,h2,h4 {
   font-family: 'Source Sans Pro', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 400;
+  font-weight: 600;
   color: #FFFFFF;
   width: 300px;
 }
@@ -131,5 +132,6 @@ p,h2,h4 {
 }
 
 .d-grey {
+text-align: right;
 background-color: #333333;
 }
