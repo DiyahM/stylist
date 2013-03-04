@@ -29,13 +29,16 @@
                 = answer.reply
               .large-1.columns
                 .row
-                  a href='/answers/vote?up=true&answer_id=#{answer.id}'
-                    .up-arrow
-                .row.points
-                  = answer.points
-                .row
-                  a href='/answers/vote?up=false&answer_id=#{answer.id}'
-                   .down-arrow
+                  -if current_user
+                    a href='/answers/vote?up=true&answer_id=#{answer.id}'
+                      .up-arrow
+                    .row.points
+                      = answer.points
+                    .row
+                      a href='/answers/vote?up=false&answer_id=#{answer.id}'
+                        .down-arrow
+                  - else
+                    a data-reveal-id="login-modal" href="#" login to vote for this reply 
 
         .row
           div.replies
