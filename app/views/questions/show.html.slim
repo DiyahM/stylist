@@ -12,10 +12,20 @@
         .row 
           h4
             = @question.description
+        .row
+          | Posted by
+          = display_name(@question.user.name)
+          = time_ago_in_words(@question.created_at)
+          |  ago
+          = @question.answers.count
+          |  replies
         - @question.answers.each do |answer|
           .row
             div.replies
               .large-10.columns
+                h2
+                  = display_name(answer.user.name)
+                  |  says:
                 = answer.reply
               .large-1.columns
                 .row
@@ -32,5 +42,3 @@
             = semantic_form_for [@question, @answer] do |f|
               = f.input :reply, :input_html => { maxlength: 140 }
               = f.actions :submit
-
-

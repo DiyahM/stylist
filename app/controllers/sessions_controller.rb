@@ -6,11 +6,13 @@ class SessionsController < ApplicationController
 
     if session[:question].present?
       @question = Question.create(session[:question]["question"])
+      session[:question] = nil
       redirect_to question_path(@question.id)
     elsif session[:answer].present?
       question = Question.find(session[:answer]["question_id"])
       question.answers.build(session[:answer]["answer"])
       question.save
+      session[:answer] = nil
       redirect_to question_path(question.id) 
     else
       redirect_to root_url
