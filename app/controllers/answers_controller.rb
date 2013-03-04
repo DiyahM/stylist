@@ -6,7 +6,11 @@ class AnswersController < ApplicationController
       answer = question.answers.build(params["answer"])
       answer.user_id = current_user.id
       answer.save
-      redirect_to question_path(question.id)
+      if answer.save
+        redirect_to question_path(question.id)
+      else
+        redirect_to request.referer
+      end
     else
       session[:answer] = params
       redirect_to modals_login_path
