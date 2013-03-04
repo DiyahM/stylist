@@ -1,7 +1,9 @@
 .container-stylist
   .row
-    .large-12.columns
+    .large-12.large-centered.columns
       h1.stylist-grey Your style questions answered by our top stylists
+  .row
+    .large-4.large-centered.columns
       a.button.button-stylist href=new_question_path Ask a style question
       
   - @questions.each do |question|
