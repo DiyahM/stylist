@@ -2,5 +2,5 @@
 
 ## Getting Started
 1. Create config/heroku_env.rb
-2. Add your local env variables to this file, (ENV[FACEBOOK_APP_ID], ENV[FACEBOOK_SECRET])
+2. Add your local env variables to this file, (ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET'], ENV['FILEPICKER_API'])
 3. When running local with facebook, be sure to run from local.host (local.host can be added to your hosts file https://discussions.apple.com/thread/4466790?start=0&tstart=0)
