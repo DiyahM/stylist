@@ -8,6 +8,7 @@ Stylist::Application.routes.draw do
   get 'modals/image_picker'
   get 'modals/login'
   get 'answers/vote'
+  resources :users
   resources :questions do
     resources :answers
   end

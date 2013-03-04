@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130304014343) do
+ActiveRecord::Schema.define(:version => 20130304195432) do
 
   create_table "answers", :force => true do |t|
     t.text     "reply"
@@ -38,9 +38,10 @@ ActiveRecord::Schema.define(:version => 20130304014343) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.integer  "points"
+    t.string   "profile_picture_url"
   end
 
 end
