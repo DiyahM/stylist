@@ -45,6 +45,9 @@
 
         .row
           div.replies
-            = semantic_form_for [@question, @answer] do |f|
-              = f.input :reply, :input_html => { maxlength: 140 }
-              = f.actions :submit
+            - if current_user
+              = semantic_form_for [@question, @answer] do |f|
+                = f.input :reply, :input_html => { maxlength: 140 }
+                = f.actions :submit
+            - else
+              a.button.button-stylist data-reveal-id="login-modal" href="#" login to post a reply
