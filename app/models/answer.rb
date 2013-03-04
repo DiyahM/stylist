@@ -5,7 +5,6 @@ class Answer < ActiveRecord::Base
   before_create :default_values
   validates :user_id, presence: true
   validates :reply, presence: true
-  validates :points, presence: true
 
   def vote_up
     self.points +=1
