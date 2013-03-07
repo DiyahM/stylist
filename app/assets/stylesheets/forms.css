@@ -1,14 +1,5 @@
 .actions input {
-	text-rendering: optimizelegibility;
-	background-color: #0099ff;
-	font-family: 'Source Sans Pro', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: 600;
-	color: #FFFFFF;
-	width: 300px;
-	padding: 10px;
-	margin-left: 100px;
+	
 }
 
 .formtastic .input {

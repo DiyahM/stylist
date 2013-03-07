@@ -1,54 +1,53 @@
 .container-stylist
   .row
-    .large-12.columns
     a.title href=request.referer ← Back
-    .row
-      .large-4.columns
-        = image_tag @question.image_url
-      .large-8.columns
-        .row
-          h2
-            = @question.title
-        .row 
-          h4
-            = @question.description
-        .row
-          .user-name
-            | Posted by
-            = display_name(@question.user.name)
-          .user-time
-            = time_ago_in_words(@question.created_at)
-            |  ago
-          .user-replies
-            = @question.answers.count
-            |  replies
-        - @question.answers.each do |answer|
-          .row
-            div.replies
-              .large-8.columns
-                h2
-                  = display_name(answer.user.name)
-                  |  says:
-                = answer.reply
-              .large-1.columns
-                .row
-                  -if current_user
-                    .row
-                      a href='/answers/vote?up=true&answer_id=#{answer.id}'
-                        .up-arrow
-                    .row.points
-                      = answer.points
-                    .row
-                      a href='/answers/vote?up=false&answer_id=#{answer.id}'
-                        .down-arrow
-                  - else
-                    a data-reveal-id="login-modal" href="#" login to vote 
-
+  .row
+    .large-4.columns
+      = image_tag @question.image_url
+    .large-8.columns
+      .row
+        h2
+          = @question.title
+      .row 
+        h4
+          = @question.description
+      .row
+        .user-name
+          | Posted by 
+          = display_name(@question.user.name)
+        .user-time
+          = time_ago_in_words(@question.created_at)
+          |  ago
+        .user-replies
+          = @question.answers.count
+          |  replies
+      - @question.answers.each do |answer|
         .row
           div.replies
-            - if current_user
-              = semantic_form_for [@question, @answer] do |f|
-                = f.input :reply, :input_html => { maxlength: 140 }
-                = f.actions :submit
-            - else
-              a.button.button-stylist data-reveal-id="login-modal" href="#" login to post a reply
+            .large-8.columns
+              h2
+                = display_name(answer.user.name)
+                |  says:
+              = answer.reply
+            .large-1.columns
+              .row
+                -if current_user
+                  .row
+                    a href='/answers/vote?up=true&answer_id=#{answer.id}'
+                      .up-arrow
+                  .row.points
+                    = answer.points
+                  .row
+                    a href='/answers/vote?up=false&answer_id=#{answer.id}'
+                      .down-arrow
+                - else
+                  a data-reveal-id="login-modal" href="#" login to vote 
+
+      .row
+        div.replies
+          - if current_user
+            = semantic_form_for [@question, @answer] do |f|
+              = f.input :reply, :input_html => { maxlength: 140 }
+              = f.action :submit, :button_html => { class:"button small button-stylist" }
+          - else
+            a.button.button-stylist data-reveal-id="login-modal" href="#" login to post a reply
