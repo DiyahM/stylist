@@ -12,7 +12,7 @@
       .row
         = f.input :title, :input_html => { maxlength:50 }
         p
-        = f.input :image_url, :input_html => { disabled:true }
+        = f.input :image_url, :input_html => { readonly:true }
         = f.input :description, :input_html => { maxlength:140 }
         .row
           .large-3.large-offset-8.columns
