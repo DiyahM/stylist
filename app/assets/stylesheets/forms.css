@@ -1,7 +1,3 @@
-.actions input {
-	
-}
-
 .formtastic .input {
 	margin-top: 0;
 }
@@ -31,6 +27,13 @@
 	font-weight: 600;
 	color: #FFFFFF;
 	font-size: 16px;
-	padding: 4px;
+	padding: 10px;
 	margin-top: 8px;
+}
+
+
+input.button.small {
+	padding-top: 1.25em;
+	padding-bottom: 1.05em;
+	font-size: 14px;
 }
