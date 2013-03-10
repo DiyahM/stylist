@@ -1,3 +1,9 @@
+step "I am logged in" do
+  step "I visit the homepage"
+  step "I click the 'login' link"
+  step "I log in via facebook"
+end
+
 step "I already have an account" do
 end
 
@@ -24,4 +30,13 @@ end
 
 step "I should see my question :question" do |question|
   page.should have_content(question)
+end
+
+step "I answer with :answer" do |answer|
+  fill_in "Reply", :with => answer
+  click_on("Create Answer")
+end
+
+step "I should see my answer :answer" do |answer|
+  page.should have_content(answer)
 end
