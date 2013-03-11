@@ -8,32 +8,57 @@
         a.button.button-stylist href=new_question_path Ask a style question
       - else
         a.button.button-stylist data-reveal-id="login-modal" href="#" Ask a style question
+  .row
+    .large-12.small-12.columns
+      .large-6.small-6.columns
+        p.title Most Recent
+      .large-6.small-6.columns
+        p.title Most Popular
       
-  - @questions.each do |question|
-    .row.row-stylist.collapse
-      .large-4.columns
-        .thumb-stylist
-          = image_tag question.image_url
-      .large-8.columns
-        .row-content
-          p
-            strong
-              = question.title
-            br
-            = question.description
-        .row-bottom
-          .large-8.columns.pull-bottom
-            .user-name
-              | Posted by 
-              = display_name(question.user.name)
-            .user-time
-              = time_ago_in_words(question.created_at)
-              |  ago
-            .user-replies
-              = question.answers.count
-              |  replies
-          .large-4.columns
-            a.button.button-stylist-small href=question_path(question.id) Show
+  - @questions.each do |question|      
+    .row
+      .large-12.columns
+        .large-6.columns
+          .row-stylist
+            .thumb-stylist
+              = image_tag question.image_url
+            p
+              strong
+                = question.title
+              br
+              = question.description
+              br
+              .user-name
+                | Asked by 
+                = display_name(question.user.name)
+              .user-time
+                = time_ago_in_words(question.created_at)
+                |  ago
+              .user-replies
+                = question.answers.count
+                |  replies
+              a.button.button-stylist-small href=question_path(question.id) Show
+        .large-6.columns
+          .row-stylist
+            .thumb-stylist
+              = image_tag question.image_url
+            p
+              strong
+                = question.title
+              br
+              = question.description
+              br
+              .user-name
+                | Asked by 
+                = display_name(question.user.name)
+              .user-time
+                = time_ago_in_words(question.created_at)
+                |  ago
+              .user-replies
+                = question.answers.count
+                |  replies
+              a.button.button-stylist-small href=question_path(question.id) Show
+
 .row
   .large-2.large-offset-10.columns        
     a.h1.title href=questions_path See all →
