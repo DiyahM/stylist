@@ -40,3 +40,7 @@ end
 step "I should see my answer :answer" do |answer|
   page.should have_content(answer)
 end
+
+step "I should see my image posted with my question" do
+  page.should have_xpath("//img[@src=\'http://placehold.it/100x100&text=[img]']")
+end
