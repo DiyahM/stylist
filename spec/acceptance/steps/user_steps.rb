@@ -44,3 +44,7 @@ end
 step "I should see my image posted with my question" do
   page.should have_xpath("//img[@src=\'http://placehold.it/100x100&text=[img]']")
 end
+
+step "I should see the :name link" do |name|
+  page.should have_xpath("//a[contains(.,'#{name}')]")
+end
