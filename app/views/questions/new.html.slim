@@ -9,7 +9,7 @@
     input.button.button-stylist type="filepicker" data-fp-apikey="#{ENV['FILEPICKER_API']}" data-fp-mimetypes="image/*" data-fp-container="modal" data-fp-services="COMPUTER,FACEBOOK,INSTAGRAM,IMAGE_SEARCH,URL,WEBCAM" onchange="$('#question_image_url').val(event.fpfile.url);"
     = semantic_form_for @question do |f|
       .row
-        = f.input :title, :input_html => { maxlength:50 }
+        = f.input :title, :label => "Question", :input_html => { maxlength:50 }
         = f.input :image_url, :input_html => { readonly:true }
         = f.input :description, :input_html => { maxlength:140 }
         = f.action :submit, :button_html => { class: "button small button-stylist" }

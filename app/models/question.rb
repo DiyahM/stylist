@@ -6,7 +6,6 @@ class Question < ActiveRecord::Base
   validates :user_id, presence: true
   validates :image_url, presence: true
   validates :title, presence: true
-  validates :description, presence: true
 
   scope :unanswered, where(answered: false).order("created_at DESC")
 
