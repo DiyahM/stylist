@@ -4,9 +4,10 @@ Stylist::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
-  get 'modals/bookmarklet'
-  get 'modals/image_picker'
-  get 'modals/login'
+  match 'retailers', to: 'pages#retailers'
+  get 'pages/bookmarklet'
+  get 'pages/image_picker'
+  get 'pages/login'
   get 'answers/vote'
   resources :users
   resources :questions do

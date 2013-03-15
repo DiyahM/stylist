@@ -1,5 +1,9 @@
-class ModalsController < ApplicationController
-  before_filter :set_layout
+class PagesController < ApplicationController
+  before_filter :set_layout, except: [:retailers]
+
+  def retailers
+
+  end
 
   def bookmarklet
 
