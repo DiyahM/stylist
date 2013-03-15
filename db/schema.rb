@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130304195432) do
+ActiveRecord::Schema.define(:version => 20130315030305) do
 
   create_table "answers", :force => true do |t|
     t.text     "reply"
@@ -42,6 +42,14 @@ ActiveRecord::Schema.define(:version => 20130304195432) do
     t.datetime "updated_at",          :null => false
     t.integer  "points"
     t.string   "profile_picture_url"
+  end
+
+  create_table "vote_limits", :force => true do |t|
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
+    t.integer  "votes"
+    t.integer  "question_id"
   end
 
 end

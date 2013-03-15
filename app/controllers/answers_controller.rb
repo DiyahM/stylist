@@ -19,14 +19,16 @@ class AnswersController < ApplicationController
 
   def vote
     answer = Answer.find(params["answer_id"])
-    if params["up"] == "true"
-      answer.vote_up
-      answer.user.points += 1
-      answer.user.save
-    else
-      answer.vote_down
-      answer.user.points -= 1
-      answer.user.save
+    if current_user.votes(answer.question_id)
+      if params["up"] == "true"
+        answer.vote_up
+        answer.user.points += 1
+        answer.user.save
+      else
+        answer.vote_down
+        answer.user.points -= 1
+        answer.user.save
+      end
     end
     redirect_to question_path(answer.question_id)
   end
