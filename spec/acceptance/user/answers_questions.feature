@@ -6,7 +6,7 @@ Feature: User answers questions
   Background:
     Given I am logged in 
     And there is a question titled "Does this match with my dress?"
-    And I visit the questions page
+    And I visit '/questions'
 
   Scenario: User answers a question
     When I click the "Show" button for question "Does this match with my dress?"

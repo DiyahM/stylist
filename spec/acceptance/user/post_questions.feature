@@ -6,7 +6,7 @@ Feature: User posts questions
 
   Scenario: Post a question
     Given I already have an account
-    When I visit the homepage
+    When I visit '/'
     And I click the 'login' link
     And I log in via facebook 
     And I click the 'Ask a style question' button

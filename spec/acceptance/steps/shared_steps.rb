@@ -1,9 +1,5 @@
-step "I visit the homepage" do
-  visit("/")
-end
-
-step "I visit the questions page" do
-  visit("/questions")
+step "I visit :path" do |path|
+  visit(path)
 end
 
 step "there is a question titled :question" do |question|

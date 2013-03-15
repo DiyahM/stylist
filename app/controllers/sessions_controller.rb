@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
       session[:answer] = nil
       redirect_to question_path(question.id)
     else
-      redirect_to root_url
+      redirect_to request.env["omniauth.origin"] || root_url
     end
   end
 
