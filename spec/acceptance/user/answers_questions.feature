@@ -11,4 +11,4 @@ Feature: User answers questions
   Scenario: User answers a question
     When I click the "Show" button for question "Does this match with my dress?"
     And I answer with "No. It doesn't match"
-    Then I should see my answer "No. It doesn't match"
+    Then I should see "No. It doesn't match"

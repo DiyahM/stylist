@@ -17,6 +17,7 @@ group :development, :test do
   gem 'capybara'
   gem 'fakeweb'
   gem 'launchy'
+  gem 'pry'
 end
 
 gem 'formtastic'

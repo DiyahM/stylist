@@ -16,6 +16,8 @@ class QuestionsController < ApplicationController
   def create
     if current_user
       @question = current_user.questions.create(params[:question])
+      current_user.points += 1
+      current_user.save
       if @question.save
         redirect_to question_path(@question.id)
       else
