@@ -65,8 +65,8 @@ p,h2,h4 {
 font-family: 'Source Sans Pro', sans-serif;
 font-size: 14px;
 color: #999;
-margin: 20px 15px 0 0;
-float:left;
+margin: 20px 35px 0 0;
+display: inline;
 }
 
 .container-stylist {
@@ -79,10 +79,10 @@ float:left;
   background-color: #FFF;
   box-shadow: 0 1px 6px #ccc;
   padding: 10px 10px 0 10px;
-  display: inline-block;
   margin: 0 0 15px 0;
           p{
           font-size: 18px;
+          margin-bottom: 1em;
           }
 }
 
@@ -111,11 +111,11 @@ float:left;
   line-height: 1em;
 }
 
-.left {
+.left-float {
   float: left;
 }
 
-.right {
+.right-float {
   float: right;
 }
 
@@ -130,12 +130,12 @@ float:left;
 }
 
 .button-stylist-small {
-  float: right;
   background-color: #0099ff;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   font-size: 15px;
   color: #EEEEEE;
+  margin: 0;
 }
 
 .footer-stylist {
