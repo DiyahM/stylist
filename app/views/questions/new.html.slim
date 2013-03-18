@@ -1,16 +1,16 @@
 .container-stylist
   .row
-    .large-12.columns
-      h1.stylist-grey Ask your style question
-  .row
   center
     h4
       | Upload or chose an image for your question 
+      br
+    .row
+    center
     input.button.button-stylist type="filepicker" data-fp-apikey="#{ENV['FILEPICKER_API']}" data-fp-mimetypes="image/*" data-fp-container="modal" data-fp-services="COMPUTER,FACEBOOK,INSTAGRAM,IMAGE_SEARCH,URL,WEBCAM" onchange="$('#question_image_url').val(event.fpfile.url);"
     = semantic_form_for @question do |f|
       .row
-        = f.input :title, :label => "Question", :input_html => { maxlength:50 }
         = f.input :image_url, :input_html => { readonly:true }
+        = f.input :title, :label => "Question", :input_html => { maxlength:50 }
         = f.input :description, :input_html => { maxlength:140 }
         = f.action :submit, :button_html => { class: "button small button-stylist" }
 javascript:

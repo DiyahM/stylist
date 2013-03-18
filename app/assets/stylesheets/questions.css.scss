@@ -12,7 +12,7 @@ p,h2,h4 {
 .title {
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #666;
+  color: #444;
   margin-bottom: .5em;
   line-height: 1em;
 }
@@ -27,13 +27,23 @@ p,h2,h4 {
   margin-right: 25px;
 }
 
+.sm-blue-bold {
+  font-size: 12px;
+  font-weight: bold;
+  color: #0099FF;
+}
+
+.text-center{
+  text-align: center;
+}
+
 .logged-in {
   float: right;
   margin-right: 20px;
 }
 
 .columns-login {
-  margin-top: 26px;
+  margin-top: 10px;
 }
 
 .formtastic li { display: block; }
@@ -54,7 +64,6 @@ p,h2,h4 {
   max-height: 200px;
   overflow: hidden;
   margin-bottom: 10px;
-  min-width: 433px;
 }
 
 .pull-bottom {
@@ -63,15 +72,18 @@ p,h2,h4 {
 
 .user-name,.user-time,.user-replies {
 font-family: 'Source Sans Pro', sans-serif;
-font-size: 14px;
-color: #999;
-margin: 20px 35px 0 0;
+font-size: 13px;
+color: #777;
+margin: 20px 15px 0 0;
 display: inline;
 }
 
 .container-stylist {
-  padding-top: 70px;
-  padding-bottom: 40px;
+  padding: 50px 0 10px 0;
+}
+
+.row-wide {
+  padding: 0 .25em;
 }
 
 .row-stylist {
@@ -79,33 +91,32 @@ display: inline;
   background-color: #FFF;
   box-shadow: 0 1px 6px #ccc;
   padding: 10px 10px 0 10px;
-  margin: 0 0 15px 0;
+  margin: 0 5px 15px 0;
           p{
-          font-size: 18px;
+          font-size: 14px;
           margin-bottom: 1em;
           }
 }
 
 .panel-stylist {
   background-color: #020714;
-  background-image: url(image-strip.jpg);
   background-repeat: no-repeat;
 }
 
 .stylist {
   color: #FFFFFF;
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 300;
-  font-size: 40px;
+  font-weight: bold;
+  font-size: 24px;
   line-height: 1.5em;
   float: left;
 }
 
 .stylist-grey {
-  color: #666666;
+  color: #444;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 36px;
   text-align: center;
   margin-bottom: 0;
   line-height: 1em;
@@ -126,7 +137,6 @@ display: inline;
   letter-spacing: 2px;
   font-weight: 600;
   color: #FFFFFF;
-  margin-top: 10px;
 }
 
 .button-stylist-small {
@@ -136,6 +146,9 @@ display: inline;
   font-size: 15px;
   color: #EEEEEE;
   margin: 0;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .footer-stylist {
@@ -159,4 +172,5 @@ display: inline;
 .d-grey {
 text-align: right;
 background-color: #333333;
+padding: 10px 0;
 }
