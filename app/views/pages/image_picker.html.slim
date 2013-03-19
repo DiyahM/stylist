@@ -1,5 +1,25 @@
-ul
-- @images.each do |image|
-  li
-    img src=image.src
+javascript:
+  var imgSelect = function(_this){
+    $('#question_image_url').val(_this.src);
+  }
+
+- if @logged_in
+  .container-stylist
+    .row
+      h5 Please select your image
+    .row
+      - @images.each do |image|
+        .small-2.columns
+          img onclick="imgSelect(this)" src=image
+    .row
+      .large-4.columns
+        = semantic_form_for @question do |f|
+          .row
+            = f.input :image_url, :input_html => { readonly:true }
+            = f.input :title, :label => "Question", :input_html => { maxlength:50 }
+            = f.input :description, :input_html => { maxlength:140 }
+            = f.action :submit, :button_html => { class: "button small button-stylist" }
+- else
+  a.button.large href="/auth/facebook" log in with facebook
+
 

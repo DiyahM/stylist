@@ -14,7 +14,9 @@ class PagesController < ApplicationController
   end
 
   def image_picker
-    @images = params[:images]
+    @logged_in = current_user
+    @images = JSON.parse(params["images"])
+    @question = Question.new
   end
 
   private
