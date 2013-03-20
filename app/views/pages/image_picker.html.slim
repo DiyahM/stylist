@@ -1,11 +1,12 @@
 javascript:
-  var test;
   jQuery('head').append("<base target='_blank'>");
+
   var imgSelect = function(_this){
     jQuery('#question_image_url').val(_this.src);
     jQuery('.thumbnail').css('border','0px');
     jQuery(_this).css('border','5px solid yellow');
   }
+
   var closeModal = function() {
     parent.postMessage("closed","*");
   }
@@ -16,21 +17,20 @@ javascript:
     div style="float:right"
       a href="javascript: closeModal()"
         | close window
-  .container-stylist
-    .row
-      h5 Please select your image
-    .row
-      - @images.each do |image|
-        .small-2.columns
-          img.thumbnail onclick="imgSelect(this)" src=image
-    .row
-      .large-4.columns
-        = semantic_form_for @question do |f|
-          .row
-            = f.input :image_url
-            = f.input :title, :label => "Question", :input_html => { maxlength:50 }
-            = f.input :description, :input_html => { maxlength:140 }
-            = f.action :submit, :button_html => { class: "button small button-stylist", onclick:"closeModal()" }
+  .row
+    h5 Please select your image
+  .row
+    - @images.each do |image|
+      .small-2.columns
+        img.thumbnail onclick="imgSelect(this)" src=image
+  .row
+    .large-4.columns
+      = semantic_form_for @question do |f|
+        .row
+          = f.input :image_url
+          = f.input :title, :label => "Question", :input_html => { maxlength:50 }
+          = f.input :description, :input_html => { maxlength:140 }
+          = f.action :submit, :button_html => { class: "button small button-stylist", onclick:"closeModal()" }
 - else
   a.button.large href="/auth/facebook" log in with facebook
 
