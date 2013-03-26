@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
+//= require tag-it
 //= require foundation
 $(document).foundation();
 //= require_tree .

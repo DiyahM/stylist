@@ -16,16 +16,13 @@ step "I log in via facebook" do
 end
 
 step "I click the :name button" do |name|
-  click_link(name)
+  click_on(name)
 end
 
 step "I create a question titled :question" do |question|
-  within("#new_question") do
-    fill_in "Title", :with => question
-    fill_in "Image url", :with => "http://placehold.it/100x100&text=[img]"
-    fill_in "Description", :with => "Please answer my question"
-    click_on("Create Question")
-  end
+  fill_in "Question", :with => question
+  fill_in "Image url", :with => "http://placehold.it/100x100&text=[img]"
+  fill_in "Description", :with => "Please answer my question"
 end
 
 step "I should see my question :question" do |question|
@@ -60,3 +57,19 @@ end
 step "reply :reply should have :number points" do |reply, number|
   find(:xpath, "//div[@class='replies'][contains(.,'#{reply}')]/div[2]/div[1]/div[@class='row points']").text.should == number
 end
+
+
+step "I post question :question with tag :tag1 and :tag2" do |question, tag1, tag2|
+  step "I am logged in"
+  step "I click the 'Ask a style question' button"
+  fill_in "Question", :with => question
+  fill_in "Image url", :with => "http://placehold.it/100x100&text=[img]"
+  fill_in "Description", :with => "Please answer my question"
+  fill_in "tag-field", :with => "#{tag1} #{tag2}"
+  step "I click the 'Create Question' button"
+end
+
+step "I should see my tags :tag1 and :tag2 posted with my question" do |tag1, tag2|
+  page.should have_content(tag1)
+  page.should have_content(tag2)
+end 

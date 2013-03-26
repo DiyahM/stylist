@@ -10,6 +10,7 @@ Stylist::Application.routes.draw do
   get 'pages/login'
   get 'answers/vote'
   resources :users
+  resources :tags
   resources :questions do
     resources :answers
   end

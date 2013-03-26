@@ -7,9 +7,39 @@
     .row
     center
     input.button.button-stylist type="filepicker" data-fp-apikey="#{ENV['FILEPICKER_API']}" data-fp-mimetypes="image/*" data-fp-container="modal" data-fp-services="COMPUTER,FACEBOOK,INSTAGRAM,IMAGE_SEARCH,URL,WEBCAM" onchange="$('#question_image_url').val(event.fpfile.url);"
-    = semantic_form_for @question do |f|
-      .row
-        = f.input :image_url, :input_html => { readonly:true }
-        = f.input :title, :label => "Question", :input_html => { maxlength:50 }
-        = f.input :description, :input_html => { maxlength:140 }
-        = f.action :submit, :button_html => { class: "button small button-stylist" }
+    #question_form
+      = semantic_form_for @question do |f|
+        .row
+          = f.input :image_url, :input_html => { readonly:true }
+          = f.input :title, :label => "Question", :input_html => { maxlength:50 }
+          = f.input :description, :input_html => { maxlength:140 }
+          h4 Tags
+          ul#tags
+            = f.input :title, :for => :tags, :label => false, :required => false, :input_html => {id:"tag-field"}
+          = f.action :submit, :button_html => { class: "button small button-stylist" }
+
+javascript:
+  $("#tags").tagit({ 
+
+    beforeTagAdded: function(event, ui) {
+      tag_x = ui.tag.text();
+      tag = tag_x.substring(0,tag_x.length-1).toString();
+      $.ajax({
+        type:"Post",
+        url: 'http://local.host:3000/tags',
+        data: {tag: {title: ''+tag}},
+        dataType: 'json',
+        success: function(data) {
+          $('#new_question').append("<input name='question[tag_ids][]' type='hidden' value="+data.id+" id="+data.title+">");
+        }
+      });
+    },
+
+    afterTagRemoved: function(event, ui) {
+      tag_x = ui.tag.text();
+      tag = tag_x.substring(0,tag_x.length-1).toString();
+      $("#"+tag).remove();
+    }
+
+  });
+

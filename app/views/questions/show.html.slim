@@ -21,6 +21,10 @@
         .user-replies
           = @question.answers.count
           |  replies
+      .row
+        h4 Tags
+        - @question.tags.each do |tag|
+          = " #{tag.title}"
       - @question.answers.each do |answer|
         .row
           div.replies

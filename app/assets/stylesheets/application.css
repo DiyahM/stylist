@@ -9,6 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= jquery.ui.all
+ *= jquery.tagit
  *= require foundation_and_overrides
  *= require formtastic
  *= require forms
