@@ -26,7 +26,7 @@ javascript:
       tag = tag_x.substring(0,tag_x.length-1).toString();
       $.ajax({
         type:"Post",
-        url: 'http://local.host:3000/tags',
+        url: 'http://stylistio.herokuapp.com/tags',
         data: {tag: {title: ''+tag}},
         dataType: 'json',
         success: function(data) {
