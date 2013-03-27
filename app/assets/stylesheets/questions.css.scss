@@ -96,6 +96,8 @@ display: inline;
           font-size: 14px;
           margin-bottom: 1em;
           }
+  height: 350px;
+  width: 96%;
 }
 
 .panel-stylist {
@@ -173,4 +175,8 @@ display: inline;
 text-align: right;
 background-color: #333333;
 padding: 10px 0;
+}
+
+.question-grid [class*="column"] + [class*="column"]:last-child {
+float: left;
 }

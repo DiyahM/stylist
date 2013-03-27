@@ -11,6 +11,13 @@ class Question < ActiveRecord::Base
 
   scope :unanswered, where(answered: false).order("created_at DESC")
 
+  def update_tags
+    self.tags.each do |tag|
+      tag.count += 1
+      tag.save
+    end
+  end
+
   private
 
   def default_values

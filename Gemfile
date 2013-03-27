@@ -19,6 +19,7 @@ group :development, :test do
   gem 'fakeweb'
   gem 'launchy'
   gem 'pry'
+  gem 'shoulda-matchers'
 end
 
 gem 'formtastic'

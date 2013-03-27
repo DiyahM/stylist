@@ -19,6 +19,7 @@ class QuestionsController < ApplicationController
       current_user.points += 1
       current_user.save
       if @question.save
+        @question.update_tags
         redirect_to question_path(@question.id)
       else
         redirect_to request.referer
@@ -29,6 +30,10 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    Question.find(params[:id]).destroy
+    redirect_to questions_path
+  end
   def show
     @question = Question.find(params[:id])
     @answer = Answer.new
