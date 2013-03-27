@@ -19,6 +19,12 @@
           = f.action :submit, :button_html => { class: "button small button-stylist" }
 
 javascript:
+  $("#tags").autocomplete({
+    messages: {
+        noResults: "",
+        results: function() {}
+    }
+  });
   $("#tags").tagit({ 
 
     beforeTagAdded: function(event, ui) {
