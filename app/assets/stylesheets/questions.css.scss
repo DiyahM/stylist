@@ -180,3 +180,6 @@ padding: 10px 0;
 .question-grid [class*="column"] + [class*="column"]:last-child {
 float: left;
 }
+.ui-helper-hidden-accessible {
+  display: none;
+}
