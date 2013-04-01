@@ -2,21 +2,20 @@
   .row
   center
     h4
-      | Upload or chose an image for your question 
+      | Drag bookmarklet to your browser bar to start asking questions 
       br
     .row
     center
-    input.button.button-stylist type="filepicker" data-fp-apikey="#{ENV['FILEPICKER_API']}" data-fp-mimetypes="image/*" data-fp-container="modal" data-fp-services="COMPUTER,FACEBOOK,INSTAGRAM,IMAGE_SEARCH,URL,WEBCAM" onchange="$('#question_image_url').val(event.fpfile.url);"
+    a.button.small.round.button-stylist href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://stylistio.herokuapp.com/image_selector.js';})();" Style Q&A
+    |   ← Drag to your Bookmarks Bar
     #question_form
       = semantic_form_for @question do |f|
         .row
-          = f.input :image_url, :input_html => { readonly:true }
+          = f.input :image_url, :input_html => { }
           = f.input :title, :label => "Question", :input_html => { maxlength:50 }
-          = f.input :description, :input_html => { maxlength:140 }
-          h4 Tags
+          p.left.tag-label Tags
           ul#tags
-            = f.input :title, :for => :tags, :label => false, :required => false, :input_html => {id:"tag-field"}
-          = f.action :submit, :button_html => { class: "button small button-stylist" }
+          = f.action :submit, :button_html => { class: "button small button-stylist-small" }
 
 javascript:
   $("#tags").tagit({ 

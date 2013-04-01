@@ -40,3 +40,10 @@ input.button.small {
 	padding-bottom: 1.05em;
 	font-size: 14px;
 }
+
+.tag-label {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	color: #333;
+	width: 110px;
+}
