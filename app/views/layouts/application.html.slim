@@ -15,10 +15,10 @@ html
       .nav
         .panel-stylist.fixed
           .row.collapse
-            .large-7.columns 
-              a.h1.stylist href=root_url stylio
-              p.user-name
-                |  your style questions answered 
+            .large-1.columns 
+              a.logo href=root_url
+            .large-6.columns 
+              p.tagline your style questions answered 
             .large-3.columns
               - if current_user
                 a.button.button-stylist-small href=new_question_path + Ask a style question

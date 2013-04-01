@@ -11,9 +11,27 @@ p,h2,h4 {
 }
 
 .title {
+  letter-spacing: 2px;
+  color: #999;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 84px;
+  height: 40px;
+  display: inline-block;
+  background-image: url(stylio-logo.png);
+  background-repeat: no-repeat;
+}
+
+.tagline {
+  color: #999;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #444;
+  margin: 3px 0 0 10px;
+  line-height: 39px;
 }
 
 .sm-blue-bold {
@@ -61,7 +79,7 @@ display: inline;
 }
 
 .container-stylist {
-  padding: 70px 0 10px 0;
+  padding: 80px 0 10px 0;
 }
 
 .row-wide {
