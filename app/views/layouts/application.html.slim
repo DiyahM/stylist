@@ -15,15 +15,22 @@ html
       .nav
         .panel-stylist.fixed
           .row.collapse
-            .large-4.small-2.columns 
-              a.h1.stylist href=root_url stylist.io
-            .large-4.columns-login
+            .large-7.columns 
+              a.h1.stylist href=root_url stylio
+              p.user-name
+                |  your style questions answered 
+            .large-3.columns
               - if current_user
-                a.login-link href=signout_path Sign Out
-                a.logged-in href="#" = display_name(current_user.name)
+                a.button.button-stylist-small href=new_question_path + Ask a style question
               - else
-                a.login-link data-reveal-id="login-modal" href="#" login
-                a.login-link data-reveal-id="login-modal" href="#" signup
+                a.button.button-stylist-small data-reveal-id="login-modal" href="#" + Ask a style question
+            .large-2.columns
+              - if current_user
+                a.sm-blue-bold href="#" = display_name(current_user.name)
+                a.sm-blue-bold  href=signout_path Sign Out
+              - else
+                a.sm-blue-bold  data-reveal-id="login-modal" href="#" Login
+                a.sm-blue-bold  data-reveal-id="login-modal" href="#" Sign up
       =yield
       #login-modal.reveal-modal.small
         center

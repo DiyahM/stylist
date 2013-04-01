@@ -1,16 +1,7 @@
 .container-stylist
   .row.collapse
-  center
-    .large-12.columns
-        h4 Your style questions answered by our top stylists
-  .row.collapse
-  center
-    .large-12.columns
-      - if current_user
-        a.button.button-stylist href=new_question_path Ask a style question
-      - else
-        a.button.button-stylist data-reveal-id="login-modal" href="#" Ask a style question
-
+    .large-9.columns
+        h4 All open questions
   .row.collapse
     .large-12.columns
       .question-grid
