@@ -6,7 +6,7 @@ Feature: User Authentication
     So that I can see activity related to only me
 
     When I visit '/'
-    And I click the 'login' link
+    And I click the 'Sign up' link
     And I log in via facebook
     Then I should see the 'Sign Out' link
   
@@ -17,6 +17,6 @@ Feature: User Authentication
 
     Given I am not already logged in
     When I visit '/questions'
-    And I click the login link
+    And I click the 'Login' link
     And I log in via facebook
     Then I should return to '/questions'

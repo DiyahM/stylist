@@ -1,6 +1,6 @@
 step "I am logged in" do
   step "I visit '/'"
-  step "I click the 'login' link"
+  step "I click the 'Login' link"
   step "I log in via facebook"
 end
 

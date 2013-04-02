@@ -6,39 +6,8 @@
       br
     .row
     center
-    a.button.small.round.button-stylist href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://stylistio.herokuapp.com/image_selector.js';})();" Style Q&A
+      a.button.small.round.button-stylist href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='http://#{request.host_with_port}/image_selector.js';})();" Style Q&A
     |   ← Drag to your Bookmarks Bar
-    #question_form
-      = semantic_form_for @question do |f|
-        .row
-          = f.input :image_url, :input_html => { }
-          = f.input :title, :label => "Question", :input_html => { maxlength:50 }
-          p.left.tag-label Tags
-          ul#tags
-          = f.action :submit, :button_html => { class: "button small button-stylist-small" }
-
-javascript:
-  $("#tags").tagit({ 
-
-    beforeTagAdded: function(event, ui) {
-      tag_x = ui.tag.text();
-      tag = tag_x.substring(0,tag_x.length-1).toString();
-      $.ajax({
-        type:"Post",
-        url: 'http://stylistio.herokuapp.com/tags',
-        data: {tag: {title: ''+tag}},
-        dataType: 'json',
-        success: function(data) {
-          $('#new_question').append("<input name='question[tag_ids][]' type='hidden' value="+data.id+" id="+data.title+">");
-        }
-      });
-    },
-
-    afterTagRemoved: function(event, ui) {
-      tag_x = ui.tag.text();
-      tag = tag_x.substring(0,tag_x.length-1).toString();
-      $("#"+tag).remove();
-    }
-
-  });
+    
+    = render "form"
 

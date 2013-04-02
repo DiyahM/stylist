@@ -14,19 +14,14 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    if current_user
-      @question = current_user.questions.create(params[:question])
-      current_user.points += 1
-      current_user.save
-      if @question.save
-        @question.update_tags
-        redirect_to question_path(@question.id)
-      else
-        redirect_to request.referer
-      end
+    @question = current_user.questions.create(params[:question])
+    current_user.points += 1
+    current_user.save
+    if @question.save
+      @question.update_tags
+      redirect_to question_path(@question.id)
     else
-      session[:question] = params
-      redirect_to modals_login_path
+      redirect_to request.referer
     end
   end
 

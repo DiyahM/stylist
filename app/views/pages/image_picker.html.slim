@@ -25,13 +25,11 @@ javascript:
         img.thumbnail onclick="imgSelect(this)" src=image
   .row
     .large-4.columns
-      = semantic_form_for @question do |f|
-        .row
-          = f.input :image_url
-          = f.input :title, :label => "Question", :input_html => { maxlength:50 }
-          = f.input :description, :input_html => { maxlength:140 }
-          = f.action :submit, :button_html => { class: "button small button-stylist", onclick:"closeModal()" }
+      = render "questions/form"
 - else
   a.button.large href="/auth/facebook" log in with facebook
+
+javascript:
+  $("#question_submit_action .button").onclick = "closeModal()";
 
 
