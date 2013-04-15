@@ -1,7 +1,7 @@
 .container-stylist
   .row
   center
-    h4.title All open questions
+    h4.title top-selling products
   .row.collapse
     .large-12.columns
       .question-grid
@@ -10,19 +10,16 @@
             .row-stylist
               .thumb-stylist
                 = image_tag question.image_url
-              p
-                strong
-                  = question.title
-                br
-                = question.description
-                .user-name
-                  | Asked by 
-                  = display_name(question.user.name)
-                .user-time
-                  = time_ago_in_words(question.created_at)
-                  |  ago
-                .user-replies
-                  = question.answers.count
-                  |  replies
-                a.sm-blue-bold href=question_path(question.id) Show
-        
+              a.product-name  href=question_path(question.id)
+                = question.title
+              .price
+                |  $150
+              br
+              a.user-name
+                |  Diyah's store
+              .user-replies
+                = question.answers.count
+                |  products
+              .user-replies
+                = question.answers.count
+                |  reviews

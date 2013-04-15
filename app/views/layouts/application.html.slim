@@ -17,13 +17,12 @@ html
           .row.collapse
             .large-1.columns 
               a.logo href=root_url
-            .large-6.columns 
-              p.tagline your style questions answered 
-            .large-3.columns
-              - if current_user
-                a.button.button-stylist-small href=new_question_path + Ask a style question
-              - else
-                a.button.button-stylist-small data-reveal-id="login-modal" href="#" + Ask a style question
+            .large-5.columns 
+              p.tagline shop smarter with our experts
+            .large-2.columns
+              <form action="/search" class="search-box">
+                         <input autocomplete="off" id="search-input" name="query" placeholder="Search for a product, store or tag" type="text" value="">
+            </form>
             .large-2.columns
               - if current_user
                 a.sm-blue-bold href="#" = display_name(current_user.name)
@@ -38,61 +37,4 @@ html
           p
             a.button href="/auth/facebook" log in with facebook
           a.close-reveal-modal &#215;      
-      footer.footer-stylist
-        .row
-          .large-3.columns
-            .title-white Women
-            a Hand bags
-            a Boots
-            a Business wear
-            a Jackets
-            a Shoes
-            a Dresses & Skirts
-            a Yoga
-            a > Under $500
-            a > Under $100
-          .large-3.columns
-            .title-white Men
-            a Suits & Ties
-            a Sportswear
-            a Hats
-            a Jackets
-            a Shoes & Boots
-            a Scarfs
-            a Cuff Links
-            a > Under $500
-            a > Under $100
-          .large-3.columns
-            .title-white Brands
-            a 3.1 Phillip Lim
-            a Celine
-            a Chanel
-            a Peter Pilotto
-            a Proenza Schouler
-            a Rebecca Minkoff
-            a Rodarte
-            a Skaist Taylor
-            a Stella McCartney
-          .large-3.columns
-            .title-white Brands
-            a Abigail Stewart
-            a Carlos
-            a Clips
-            a Erro
-            a Geren Ford
-            a Paule Ka
-            a Vivienne Westwood
-            a Willow
-            a Zucca
-      footer.d-grey.title
-        .row
-          .large-4.columns
-            a href="retailers" 
-              | Stylist.io For Retailers
-          .large-8.columns
-            | Made by 
-            a href='https://twitter.com/hadiyahdotme' @hadiyahdotme 
-            | & 
-            a href='https://twitter.com/emstar' @emstar
-    - else
-      =yield
+ 
