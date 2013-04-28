@@ -16,13 +16,10 @@ html
             .row.collapse
               .large-1.columns 
                 a.logo href=root_url
-              .large-6.columns 
-                p.tagline your style questions answered 
-              .large-3.columns
-                - if current_user
-                  a.button.button-stylist-small href=new_question_path + Ask a style question
-                - else
-                  a.button.button-stylist-small data-reveal-id="login-modal" href="#" + Ask a style question
+              .large-5.columns 
+                p.tagline shop smarter with our experts 
+              .large-2.columns
+                input type="text" placeholder="Search for a product, store or tag" 
               .large-2.columns
                 - if current_user
                   a.sm-blue-bold href="#" = display_name(current_user.name)

@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 p {
-font-size: 12px;
+font-size: 14px;
 }
 
 p,h2,h4 {
@@ -70,16 +70,19 @@ p,h2,h4 {
   margin-top: 20px;
 }
 
-.user-name,.user-time,.user-replies {
-font-family: 'Source Sans Pro', sans-serif;
-font-size: 13px;
-color: #777;
-margin: 20px 15px 0 0;
-display: inline;
-}
-
 .container-stylist {
   padding: 70px 0 10px 0;
+  background-color: #f0f0f0;
+}
+
+.search-box {
+width: 300px;
+}
+
+.icon-magnifier {
+  background-image: url(search-icon.png);
+  width: 18px;
+  height: 13px;
 }
 
 .row-wide {
@@ -90,21 +93,51 @@ display: inline;
   border: 1px solid #CCC;
   background-color: #FFF;
   box-shadow: 0 1px 6px #ccc;
-  padding: 10px 10px 0 10px;
+  padding: 10px;
   margin: 0 5px 15px 0;
-          p{
-          font-size: 14px;
-          margin-bottom: 1em;
-          }
-  height: 350px;
   width: 96%;
+}
+
+.price {
+  color: #cc3300;
+  font-size: 24px;
+  display:inline;
+  float:right;
+  line-height: 30px;
+}
+
+.product-name {
+  font-size: 18px;
+  color: #444;
+  display:inline;
+  line-height: 30px;
 }
 
 .panel-stylist {
   background-color: #FFF;
   border-bottom: 1px #CCC solid;
-  padding: 10px 0 7px 0;
+  padding: 10px 0 0 0;
 }
+
+.user-name{
+font-family: 'Source Sans Pro', sans-serif;
+font-size: 13px;
+color: #0099FF;
+margin: 20px 15px 0 0;
+display: inline;
+line-height: 20px;
+cursor: pointer;
+}
+
+.user-replies {
+font-family: 'Source Sans Pro', sans-serif;
+font-size: 13px;
+color: #777;
+margin: 20px 15px 0 0;
+display: inline;
+line-height: 20px;
+}
+
 
 .stylist {
   color: #777;
@@ -155,7 +188,6 @@ display: inline;
 
 .footer-stylist {
   background-color: #000;
-  margin-top: 50px;
   padding: 20px 0;
   color: #FFF;
   line-height: 2em;
