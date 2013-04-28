@@ -30,6 +30,8 @@ javascript:
   a.button.large href="/auth/facebook" log in with facebook
 
 javascript:
-  $("#question_submit_action .button").onclick = "closeModal()";
+  $("#question_submit_action .button").click(function() {
+    closeModal();
+  });
 
 

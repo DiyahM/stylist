@@ -1,5 +1,4 @@
 class QuestionsController < ApplicationController
-
   def home
     @questions = Question.unanswered.limit(12)
     @layout = "home"

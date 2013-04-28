@@ -1,98 +1,110 @@
 doctype html
 html
   head
-    title Stylist
+    title Stylio
     = stylesheet_link_tag "application",
       "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700", :media => "all"
     = favicon_link_tag(source="/favicon.gif")
     = javascript_include_tag "application"
     = csrf_meta_tags
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-  javascript:
-    (function(a){if(window.filepicker){return}var b=a.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===a.location.protocol?"https:":"http:")+"//api.filepicker.io/v1/filepicker.js";var c=a.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d={};d._queue=[];var e="pick,pickMultiple,pickAndStore,read,write,writeUrl,export,convert,store,storeUrl,remove,stat,setKey,constructWidget,makeDropPane".split(",");var f=function(a,b){return function(){b.push([a,arguments])}};for(var g=0;g<e.length;g++){d[e[g]]=f(e[g],d._queue)}window.filepicker=d})(document);
   body
     - if @layout != "modal"
-      .nav
-        .panel-stylist.fixed
-          .row.collapse
-            .large-1.columns 
-              a.logo href=root_url
-            .large-6.columns 
-              p.tagline your style questions answered 
-            .large-3.columns
-              - if current_user
-                a.button.button-stylist-small href=new_question_path + Ask a style question
-              - else
-                a.button.button-stylist-small data-reveal-id="login-modal" href="#" + Ask a style question
-            .large-2.columns
-              - if current_user
-                a.sm-blue-bold href="#" = display_name(current_user.name)
-                a.sm-blue-bold  href=signout_path Sign Out
-              - else
-                a.sm-blue-bold  data-reveal-id="login-modal" href="#" Login
-                a.sm-blue-bold  data-reveal-id="login-modal" href="#" Sign up
-      =yield
+      #header
+        .nav
+          .panel-stylist.fixed
+            .row.collapse
+              .large-1.columns 
+                a.logo href=root_url
+              .large-6.columns 
+                p.tagline your style questions answered 
+              .large-3.columns
+                - if current_user
+                  a.button.button-stylist-small href=new_question_path + Ask a style question
+                - else
+                  a.button.button-stylist-small data-reveal-id="login-modal" href="#" + Ask a style question
+              .large-2.columns
+                - if current_user
+                  a.sm-blue-bold href="#" = display_name(current_user.name)
+                  a.sm-blue-bold  href=signout_path Sign Out
+                - else
+                  a.sm-blue-bold  data-reveal-id="login-modal" href="#" Login
+                  a.sm-blue-bold  data-reveal-id="login-modal" href="#" Sign up
+
+      #flash-message
+        - if flash[:notice]
+          p.notice
+            = flash[:notice]
+        - if flash[:error]
+          p.error
+            = flash[:error]
+
+      #content
+        =yield
+
       #login-modal.reveal-modal.small
         center
           h2 Login to post
           p
             a.button href="/auth/facebook" log in with facebook
           a.close-reveal-modal &#215;      
-      footer.footer-stylist
-        .row
-          .large-3.columns
-            .title-white Women
-            a Hand bags
-            a Boots
-            a Business wear
-            a Jackets
-            a Shoes
-            a Dresses & Skirts
-            a Yoga
-            a > Under $500
-            a > Under $100
-          .large-3.columns
-            .title-white Men
-            a Suits & Ties
-            a Sportswear
-            a Hats
-            a Jackets
-            a Shoes & Boots
-            a Scarfs
-            a Cuff Links
-            a > Under $500
-            a > Under $100
-          .large-3.columns
-            .title-white Brands
-            a 3.1 Phillip Lim
-            a Celine
-            a Chanel
-            a Peter Pilotto
-            a Proenza Schouler
-            a Rebecca Minkoff
-            a Rodarte
-            a Skaist Taylor
-            a Stella McCartney
-          .large-3.columns
-            .title-white Brands
-            a Abigail Stewart
-            a Carlos
-            a Clips
-            a Erro
-            a Geren Ford
-            a Paule Ka
-            a Vivienne Westwood
-            a Willow
-            a Zucca
-      footer.d-grey.title
-        .row
-          .large-4.columns
-            a href="retailers" 
-              | Stylist.io For Retailers
-          .large-8.columns
-            | Made by 
-            a href='https://twitter.com/hadiyahdotme' @hadiyahdotme 
-            | & 
-            a href='https://twitter.com/emstar' @emstar
+      #footer
+        footer.footer-stylist
+          .row
+            .large-3.columns
+              .title-white Women
+              a Hand bags
+              a Boots
+              a Business wear
+              a Jackets
+              a Shoes
+              a Dresses & Skirts
+              a Yoga
+              a > Under $500
+              a > Under $100
+            .large-3.columns
+              .title-white Men
+              a Suits & Ties
+              a Sportswear
+              a Hats
+              a Jackets
+              a Shoes & Boots
+              a Scarfs
+              a Cuff Links
+              a > Under $500
+              a > Under $100
+            .large-3.columns
+              .title-white Brands
+              a 3.1 Phillip Lim
+              a Celine
+              a Chanel
+              a Peter Pilotto
+              a Proenza Schouler
+              a Rebecca Minkoff
+              a Rodarte
+              a Skaist Taylor
+              a Stella McCartney
+            .large-3.columns
+              .title-white Brands
+              a Abigail Stewart
+              a Carlos
+              a Clips
+              a Erro
+              a Geren Ford
+              a Paule Ka
+              a Vivienne Westwood
+              a Willow
+              a Zucca
+        footer.d-grey.title
+          .row
+            .large-4.columns
+              a href="retailers" 
+                | Stylist.io For Retailers
+            .large-8.columns
+              | Made by 
+              a href='https://twitter.com/hadiyahdotme' @hadiyahdotme 
+              | & 
+              a href='https://twitter.com/emstar' @emstar
     - else
       =yield
+
